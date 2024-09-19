@@ -393,6 +393,16 @@ main {
     line-height: 1.6;
 }
 
+.hire-me-text span { 
+    color: var(--white-2);
+    font-size: var(--fs-1);
+}
+
+.hire-me-text p { 
+    color: var(--orange-yellow-crayola);
+    font-size: var(--fs-2);
+}
+
 .about-text p { margin-bottom: 15px; }
 
 
