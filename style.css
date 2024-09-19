@@ -402,8 +402,6 @@ main {
     color: var(--light-grey);
     font-size: 35px;
     font-weight: var(--fs-500);
-    display: inline-block;
-    transform: skewX(-15deg);
 }
 
 .hire-me-text p { 
