@@ -14,6 +14,7 @@ sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); }
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-select-value]");
+const filterbtn = document.querySelectorAll("[data-filter-btn");
 
 select.addEventListener("click", function ()  { elementToggleFunc(this); });
 
@@ -42,4 +43,39 @@ const filterFunc = function (selectedValue) {
             }
     }
 
+}
+
+// add event to all filter button items for large screen
+let lastClickedBtn = filterBtn[0];
+
+for (let  i = 0; i < filterBtn.length; i++) {
+    filterBtn[i].addEventListener("click", function () {
+        let selectedValue = this.innerText.toLowerCase();
+        selectValue.innerText = this.innerText;
+        filterFunc(selectedValue);
+
+        lastClickedBtn.classList.remove("active");
+        this.classList.add("active");
+        lastClickedBtn = this;
+    });
+}
+
+// page navigation variables
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
+const pages = document.querySelectorAll("[data-page]");
+
+// add event to all nav link
+for (let  i = 0; i < navigationLinks.length; i++) {
+    navigationLinks.addEventListener("click", function ()  {
+        for (let  i = 0; i < pages.length; i++) {    
+            if (this.innerText.toLowerCase() == pages[i].dataset.page) {
+                pages[i].classList.add("active");
+                navigationLinks[i].classList.add("active");
+                window.scrollTo(0, 0);
+            }else {
+                pages[i].classList.remove("active");
+                navigationLinks[i].classList.remove("active");
+                }
+            }
+      });
 }
