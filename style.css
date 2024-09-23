@@ -428,7 +428,7 @@ main {
 }
 
 
-.about-text p { 
+/**.about-text p { 
     margin-bottom: 15px;
     color: var(--orange-yellow-crayola);
  }
